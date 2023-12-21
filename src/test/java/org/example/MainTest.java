@@ -39,4 +39,12 @@ class MainTest {
         int expected = 50;
         assertEquals(expected, result);
     }
+
+    @Test
+    public void if_full_figure_should_return_30() {
+        List<Integer> dies = List.of(2,2,2,1,1);
+        int result = Main.main(dies);
+        int expected = 50;
+        assertEquals(expected, result);
+    }
 }

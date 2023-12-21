@@ -1,36 +1,42 @@
 package org.example;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static int main(List<Integer> dies) {
         int sum = 0;
-        int nbSameValue = 1;
+        int nbOccurences = 0;
 
-        for(int mainDieIndex = 0; mainDieIndex < dies.size(); mainDieIndex++) {
-            for(int otherDieIndex = mainDieIndex+1; otherDieIndex < dies.size(); otherDieIndex ++) {
-                if(dies.get(otherDieIndex) == dies.get(mainDieIndex)) {
-                    nbSameValue ++;
-                }
-            }
-            if(nbSameValue != 0) break;
-
-        }
+        nbOccurences = Main.getOccurrences(dies);
 
 
-        if(nbSameValue == 3) {
+        if (nbOccurences == 3) {
             sum = 28;
-        } else if (nbSameValue == 4) {
+        } else if (nbOccurences == 4) {
             sum = 35;
-        } else if (nbSameValue == 5) {
+        } else if (nbOccurences == 5) {
             sum = 50;
 
         } else {
-            for(Integer die: dies) {
+            for (Integer die : dies) {
                 sum += die;
             }
         }
 
         return sum;
     }
+
+    static int getOccurrences(List<Integer> values) {
+
+        Map<Integer, Integer> occurrencesMap = new HashMap<>();
+        for (int value : values) {
+            occurrencesMap.put(value, occurrencesMap.getOrDefault(value, 0) + 1);
+        }
+
+        return Collections.max(occurrencesMap.values());
+    }
+
 }

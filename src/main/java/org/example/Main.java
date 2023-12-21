@@ -8,7 +8,7 @@ public class Main {
         int nbSameValue = 1;
 
         for(int mainDieIndex = 0; mainDieIndex < dies.size(); mainDieIndex++) {
-            for(int otherDieIndex = mainDieIndex+1; otherDieIndex< dies.size(); otherDieIndex ++) {
+            for(int otherDieIndex = mainDieIndex+1; otherDieIndex < dies.size(); otherDieIndex ++) {
                 if(dies.get(otherDieIndex) == dies.get(mainDieIndex)) {
                     nbSameValue ++;
                 }
@@ -22,6 +22,9 @@ public class Main {
             sum = 28;
         } else if (nbSameValue == 4) {
             sum = 35;
+        } else if (nbSameValue == 5) {
+            sum = 50;
+
         } else {
             for(Integer die: dies) {
                 sum += die;

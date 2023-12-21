@@ -36,7 +36,7 @@ class MainTest {
     public void if_yams_figure_should_return_50() {
         List<Integer> dies = List.of(2,2,2,2,2);
         int result = Main.main(dies);
-        int expected = 35;
+        int expected = 50;
         assertEquals(expected, result);
     }
 }

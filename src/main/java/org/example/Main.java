@@ -8,16 +8,16 @@ import java.util.Map;
 public class Main {
     public static int main(List<Integer> dies) {
         int sum = 0;
-        int nbOccurences = 0;
 
-        nbOccurences = Main.getOccurrences(dies);
+        Map<Integer, Integer> occurrences = Main.getOccurrences(dies);
+        int maxOccurrences = Collections.max(occurrences.values());
 
 
-        if (nbOccurences == 3) {
+        if (maxOccurrences == 3) {
             sum = 28;
-        } else if (nbOccurences == 4) {
+        } else if (maxOccurrences == 4) {
             sum = 35;
-        } else if (nbOccurences == 5) {
+        } else if (maxOccurrences == 5) {
             sum = 50;
 
         } else {
@@ -29,14 +29,14 @@ public class Main {
         return sum;
     }
 
-    static int getOccurrences(List<Integer> values) {
+    static Map<Integer, Integer> getOccurrences(List<Integer> values) {
 
-        Map<Integer, Integer> occurrencesMap = new HashMap<>();
+        Map<Integer, Integer> occurrences = new HashMap<>();
         for (int value : values) {
-            occurrencesMap.put(value, occurrencesMap.getOrDefault(value, 0) + 1);
+            occurrences.put(value, occurrences.getOrDefault(value, 0) + 1);
         }
 
-        return Collections.max(occurrencesMap.values());
+        return occurrences;
     }
 
 }

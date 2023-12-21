@@ -1,12 +1,9 @@
 package org.example;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Main {
-    public static int main(List<Integer> dies) {
+    public static int getPoints(List<Integer> dies) {
         int sum = 0;
 
         Map<Integer, Integer> occurrences = Main.getOccurrences(dies);
@@ -30,12 +27,10 @@ public class Main {
     }
 
     static Map<Integer, Integer> getOccurrences(List<Integer> values) {
-
         Map<Integer, Integer> occurrences = new HashMap<>();
         for (int value : values) {
             occurrences.put(value, occurrences.getOrDefault(value, 0) + 1);
         }
-
         return occurrences;
     }
 

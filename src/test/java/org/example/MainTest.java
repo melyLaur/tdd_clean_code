@@ -24,4 +24,11 @@ class MainTest {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void if_carre_figure_should_return_35() {
+        List<Integer> dies = List.of(2,2,2,4,2);
+        int result = Main.main(dies);
+        int expected = 35;
+        assertEquals(expected, result);
+    }
 }

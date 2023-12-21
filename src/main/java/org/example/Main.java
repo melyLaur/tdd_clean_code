@@ -7,9 +7,9 @@ public class Main {
         int sum = 0;
         int nbSameValue = 1;
 
-        for(int i = 0; i < dies.size(); i++) {
-            for(int otherDie = i+1; otherDie< dies.size(); otherDie ++) {
-                if(dies.get(otherDie) == dies.get(i)) {
+        for(int mainDieIndex = 0; mainDieIndex < dies.size(); mainDieIndex++) {
+            for(int otherDieIndex = mainDieIndex+1; otherDieIndex< dies.size(); otherDieIndex ++) {
+                if(dies.get(otherDieIndex) == dies.get(mainDieIndex)) {
                     nbSameValue ++;
                 }
             }

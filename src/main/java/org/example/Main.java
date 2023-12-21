@@ -20,6 +20,8 @@ public class Main {
 
         if(nbSameValue == 3) {
             sum = 28;
+        } else if (nbSameValue == 4) {
+            sum = 35;
         } else {
             for(Integer die: dies) {
                 sum += die;

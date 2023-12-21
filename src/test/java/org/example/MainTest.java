@@ -18,7 +18,7 @@ class MainTest {
 
     @Test
     public void if_brelan_figure_should_return_28() {
-        List<Integer> dies = List.of(1,1,1,4,5);
+        List<Integer> dies = List.of(1,1,1,4,2);
         int result = Main.main(dies);
         int expected = 28;
         assertEquals(expected, result);
